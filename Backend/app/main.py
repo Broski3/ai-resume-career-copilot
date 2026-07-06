@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-
+from app.api.health import router 
 app = FastAPI()
 
-@app.get("/")
-def healt_check():
-    return{"message":"AI resume and career copilot API is running!!"}
+app.include_router(router)
